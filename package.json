@@ -1,0 +1,56 @@
+{
+  "name": "@valentinog/array-insert-after",
+  "version": "1.0.0",
+  "description": "Insert an element in an array after the given index.",
+  "keywords": [
+    "array",
+    "insert-after",
+    "array-insert-after"
+  ],
+  "main": "dist/insertAfter.js",
+  "type": "module",
+  "scripts": {
+    "test": "ava",
+    "tsc": "tsc",
+    "build": "npm run tsc && uglifyjs dist/insertAfter.js -m -o dist/insertAfter.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valentinogagliardi/array-insert-after.git"
+  },
+  "author": {
+    "name": "Valentino Gagliardi",
+    "email": "valentino@valentinog.com",
+    "url": "https://www.valentinog.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valentinogagliardi/array-insert-after/issues"
+  },
+  "homepage": "https://github.com/valentinogagliardi/array-insert-after#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "ava": "^3.15.0",
+    "np": "^7.5.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "uglify-js": "^3.14.3"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nonSemVerExperiments": {
+      "configurableModuleFormat": true
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  }
+}
