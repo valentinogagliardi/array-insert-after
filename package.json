@@ -1,6 +1,6 @@
 {
   "name": "@valentinog/array-insert-after",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Insert an element in an array after the given index.",
   "keywords": [
     "array",
