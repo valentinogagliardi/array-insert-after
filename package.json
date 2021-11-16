@@ -1,6 +1,6 @@
 {
   "name": "@valentinog/array-insert-after",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Insert an element in an array after the given index.",
   "keywords": [
     "array",
@@ -13,6 +13,7 @@
     "import": "./dist/esm/insertAfter.js",
     "require": "./dist/cjs/insertAfter.cjs"
   },
+  "types": "./dist/types/insertAfter.d.ts",
   "scripts": {
     "test": "ava",
     "tsc": "tsc",
@@ -22,6 +23,7 @@
   "files": [
     "dist/cjs/insertAfter.cjs",
     "dist/esm/insertAfter.js",
+    "dist/types/insertAfter.d.ts",
     "README.md",
     "LICENSE"
   ],

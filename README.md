@@ -7,12 +7,12 @@
 npm install @valentinog/array-insert-after
 ```
 
-## Usage
+## Usage (ES module)
 
 With a numeric index:
 
 ```typescript
-import { insertAfter } from "@valentinog/array-insert-after";
+import insertAfter from "@valentinog/array-insert-after";
 
 const elements = ["b", "c", "d"];
 const newElement = "a";
@@ -23,7 +23,7 @@ insertAfter<string>(elements, newElement, 1);
 With a predicate function:
 
 ```typescript
-import { insertAfter } from "@valentinog/array-insert-after";
+import insertAfter from "@valentinog/array-insert-after";
 
 const elements = [
     {
@@ -42,6 +42,14 @@ const newElement = {
 const predicate = (element: typeof newElement) => element.id === 2;
 
 insertAfter<{ id: number; name: string }>(elements, newElement, predicate);
+```
+
+## Usage (CommonJS)
+
+```typescript
+const insertAfter =  require("@valentinog/array-insert-after");
+
+// do your stuff
 ```
 
 ## Development
