@@ -1,5 +1,5 @@
 import test from "ava";
-import { insertAfter } from "../src/insertAfter.js";
+import insertAfter from "../src/insertAfter.js";
 
 test("insert a new element after the given index", (t) => {
   const elements = ["b", "c", "d"];

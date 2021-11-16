@@ -5,6 +5,8 @@
     "moduleResolution": "node",
     "strict": true,
     "outDir": "./dist/esm/",
+    "declaration": true,
+    "declarationDir": "./dist/types/"
     },
   "include": ["src/*"]
 }
