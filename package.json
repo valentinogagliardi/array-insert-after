@@ -1,11 +1,14 @@
 {
   "name": "@valentinog/array-insert-after",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Insert an element in an array after the given index.",
   "keywords": [
     "array",
     "insert-after",
-    "array-insert-after"
+    "array-insert-after",
+    "tools",
+    "slice",
+    "typescript"
   ],
   "type": "module",
   "main": "./dist/cjs/insertAfter.cjs",
@@ -18,7 +21,8 @@
     "test": "ava",
     "tsc": "tsc",
     "build:esm": "npm run tsc && uglifyjs dist/esm/insertAfter.js -m -o dist/esm/insertAfter.js",
-    "build:cjs": "npm run tsc -- --target es5 --module commonjs --outDir ./dist/cjs && uglifyjs ./dist/cjs/insertAfter.js -m -o ./dist/cjs/insertAfter.cjs"
+    "build:cjs": "npm run tsc -- --target es5 --module commonjs --outDir ./dist/cjs && uglifyjs ./dist/cjs/insertAfter.js -m -o ./dist/cjs/insertAfter.cjs",
+    "prepare": "husky install"
   },
   "files": [
     "dist/cjs/insertAfter.cjs",
@@ -47,7 +51,8 @@
     "prettier": "^2.4.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
-    "uglify-js": "^3.14.3"
+    "uglify-js": "^3.14.3",
+    "husky": "^7.0.0"
   },
   "ava": {
     "extensions": {
