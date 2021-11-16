@@ -12,6 +12,8 @@ npm install @valentinog/array-insert-after
 With a numeric index:
 
 ```typescript
+import { insertAfter } from "@valentinog/array-insert-after";
+
 const elements = ["b", "c", "d"];
 const newElement = "a";
 
@@ -21,6 +23,8 @@ insertAfter<string>(elements, newElement, 1);
 With a predicate function:
 
 ```typescript
+import { insertAfter } from "@valentinog/array-insert-after";
+
 const elements = [
     {
         id: 1,
