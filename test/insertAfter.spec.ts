@@ -69,3 +69,34 @@ test("insert a new element after the given index based on a predicate finder fun
     ]
   );
 });
+
+test("index out of bounds with array of primitives", (t) => {
+  const elements = ["b", "c", "d"];
+  const newElement = "a";
+
+  t.throws(() => insertAfter<string>(elements, newElement, 3), {
+    message: "Error: Index out of bounds",
+  });
+});
+
+test("index out of bounds with array of objects", (t) => {
+  const elements = [
+    {
+      id: 1,
+      name: "a",
+    },
+    { id: 2, name: "b" },
+    { id: 3, name: "c" },
+  ];
+  const newElement = {
+    id: 4,
+    name: "x",
+  };
+
+  t.throws(
+    () => insertAfter<{ id: number; name: string }>(elements, newElement, 3),
+    {
+      message: "Error: Index out of bounds",
+    }
+  );
+});
