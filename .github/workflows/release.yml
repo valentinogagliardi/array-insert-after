@@ -19,8 +19,10 @@ jobs:
           path: ~/.npm
           key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.OS }}-node-
+      - run: npm ci
       - run: npm test
-      - run: npm run build
-      - run: npm publish
+      - run: npm run build:esm
+      - run: npm run build:cjs
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

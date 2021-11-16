@@ -13,6 +13,30 @@ test("insert a new element after the given index", (t) => {
   ]);
 });
 
+test("insert a new element after the given index, at the end", (t) => {
+  const elements = ["b", "c", "d"];
+  const newElement = "a";
+
+  t.deepEqual(insertAfter<string>(elements, newElement, 2), [
+    "b",
+    "c",
+    "d",
+    "a",
+  ]);
+});
+
+test("insert a new element after the given index, at the beginning", (t) => {
+  const elements = ["b", "c", "d"];
+  const newElement = "a";
+
+  t.deepEqual(insertAfter<string>(elements, newElement, 0), [
+    "b",
+    "a",
+    "c",
+    "d",
+  ]);
+});
+
 test("insert a new element after the given index based on a predicate finder function", (t) => {
   const elements = [
     {
