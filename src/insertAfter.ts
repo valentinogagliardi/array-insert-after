@@ -10,7 +10,7 @@ export type InsertAfter = <T extends any>(
  *
  * @param elements The original array of elements.
  * @param newElement The new element to add.
- * @param after The index after the new element should be added. Can be either a number or a predicate function for Array.prototype.find().
+ * @param after The index after the new element should be added. Can be either a number or a predicate function for Array.prototype.findIndex().
  *
  * @example
  * const elements = ["b", "c", "d"];
@@ -27,6 +27,9 @@ export type InsertAfter = <T extends any>(
  * @see https://github.com/valentinogagliardi/array-insert-after/blob/main/README.md#usage
  */
 const insertAfter: InsertAfter = (elements, newElement, after) => {
+  if (typeof after === "number" && after >= elements.length)
+    throw Error("Error: Index out of bounds");
+
   if (typeof after === "function") {
     const index = elements.findIndex(after);
     const [first, ...rest] = elements.slice(index);
@@ -37,4 +40,4 @@ const insertAfter: InsertAfter = (elements, newElement, after) => {
   return [...elements.slice(0, after), first, newElement, ...rest];
 };
 
-export default insertAfter
+export default insertAfter;
