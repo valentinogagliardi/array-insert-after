@@ -1,6 +1,6 @@
 {
   "name": "@valentinog/array-insert-after",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Insert an element in an array after the given index.",
   "keywords": [
     "array",
@@ -20,6 +20,7 @@
   "scripts": {
     "test": "ava",
     "tsc": "tsc",
+    "lint": "eslint .",
     "build:esm": "npm run tsc && uglifyjs dist/esm/insertAfter.js -m -o dist/esm/insertAfter.js",
     "build:cjs": "npm run tsc -- --target es5 --module commonjs --outDir ./dist/cjs && uglifyjs ./dist/cjs/insertAfter.js -m -o ./dist/cjs/insertAfter.cjs",
     "prepare": "husky install"
@@ -47,12 +48,15 @@
   "homepage": "https://github.com/valentinogagliardi/array-insert-after#readme",
   "devDependencies": {
     "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "ava": "^3.15.0",
+    "eslint": "^8.3.0",
+    "husky": "^7.0.0",
     "prettier": "^2.4.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
-    "uglify-js": "^3.14.3",
-    "husky": "^7.0.0"
+    "uglify-js": "^3.14.3"
   },
   "ava": {
     "extensions": {
@@ -64,5 +68,22 @@
     "nodeArguments": [
       "--loader=ts-node/esm"
     ]
-  }
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/consistent-type-imports": "error"
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "dist"
+  ]
 }

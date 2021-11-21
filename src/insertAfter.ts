@@ -1,5 +1,5 @@
-export type FinderPredicate<T extends any> = (element: T) => boolean;
-export type InsertAfter = <T extends any>(
+export type FinderPredicate<T> = (element: T) => boolean;
+export type InsertAfter = <T>(
   elements: T[],
   newElement: T,
   after: number | FinderPredicate<T>
